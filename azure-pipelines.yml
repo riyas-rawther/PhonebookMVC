@@ -5,6 +5,8 @@
 
 trigger:
 - master
+- staging
+- development
 
 pool:
 #  vmImage: 'windows-latest'
