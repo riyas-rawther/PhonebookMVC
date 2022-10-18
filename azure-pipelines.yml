@@ -36,12 +36,6 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: 'PhonebookMVC\bin'
-    Contents: '**'
-    TargetFolder: '/'
-
 - task: PublishBuildArtifacts@1
   displayName: 'Publish artifacts'
   inputs:
