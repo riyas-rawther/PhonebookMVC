@@ -36,11 +36,11 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: CopyFiles@1
+- task: CopyFiles@2
   inputs:
-    SourceFolder: '$(System.DefaultWorkingDirectory)'
-    Contents: 'it-EMDB/bin/$(BuildConfiguration)/*'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)
+    SourceFolder: 'PhonebookMVC\bin'
+    Contents: '**'
+    TargetFolder: '/'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish artifacts'
