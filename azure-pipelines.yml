@@ -17,15 +17,8 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
-#disabling sonarqube
-#steps:
-#- task: SonarQubePrepare@5
-#  inputs:
-#    SonarQube: 'Sonarqube in BOM region'
-#    scannerMode: 'MSBuild'
-#    projectKey: 'DotNetMVC_DotNetMVC_AYPFUrsPJOZyeOAFUkZI'
+steps:
 
-- task: NuGetToolInstaller@0
 
 - task: NuGetCommand@2
   inputs:
@@ -37,12 +30,7 @@ variables:
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-  
-###SONARQUBE DISABLING
-#- task: SonarQubeAnalyze@5
-#- task: SonarQubePublish@5
-#  inputs:
-#    pollingTimeoutSec: '300'
+
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
