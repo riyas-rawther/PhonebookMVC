@@ -36,8 +36,8 @@ steps:
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-- task: SonarQubeAnalyze@5
-  condition: always() # run even if Sonarqube server timeout
+#- task: SonarQubeAnalyze@5
+#  condition: always() # run even if Sonarqube server timeout
 # - task: SonarQubePublish@5
 #   condition: always() # run even if Sonarqube server timeout
 #   inputs:
